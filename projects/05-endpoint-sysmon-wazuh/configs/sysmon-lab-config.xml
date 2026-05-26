@@ -1,0 +1,30 @@
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>sha256</HashAlgorithms>
+  <EventFiltering>
+    <ProcessCreate onmatch="include">
+      <Image condition="end with">powershell.exe</Image>
+      <Image condition="end with">cmd.exe</Image>
+      <Image condition="end with">wscript.exe</Image>
+      <Image condition="end with">cscript.exe</Image>
+      <Image condition="end with">rundll32.exe</Image>
+      <CommandLine condition="contains">encodedcommand</CommandLine>
+      <CommandLine condition="contains">downloadstring</CommandLine>
+      <CommandLine condition="contains">reg add</CommandLine>
+      <CommandLine condition="contains">schtasks</CommandLine>
+    </ProcessCreate>
+    <NetworkConnect onmatch="include">
+      <Image condition="end with">powershell.exe</Image>
+      <Image condition="end with">cmd.exe</Image>
+      <DestinationPort condition="is">4444</DestinationPort>
+    </NetworkConnect>
+    <FileCreate onmatch="include">
+      <TargetFilename condition="contains">\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\</TargetFilename>
+      <TargetFilename condition="end with">.ps1</TargetFilename>
+      <TargetFilename condition="end with">.vbs</TargetFilename>
+    </FileCreate>
+    <RegistryEvent onmatch="include">
+      <TargetObject condition="contains">\Software\Microsoft\Windows\CurrentVersion\Run</TargetObject>
+      <TargetObject condition="contains">\Software\Microsoft\Windows\CurrentVersion\RunOnce</TargetObject>
+    </RegistryEvent>
+  </EventFiltering>
+</Sysmon>

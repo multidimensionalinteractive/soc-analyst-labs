@@ -1,0 +1,11 @@
+services:
+  cowrie:
+    image: cowrie/cowrie:latest
+    container_name: soc-lab-cowrie
+    restart: unless-stopped
+    ports:
+      - "2222:2222"
+    volumes:
+      - ./var:/cowrie/cowrie-git/var
+      - ./etc:/cowrie/cowrie-git/etc
+    read_only: false

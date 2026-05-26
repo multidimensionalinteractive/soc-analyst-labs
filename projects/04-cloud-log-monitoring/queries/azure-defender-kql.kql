@@ -1,0 +1,23 @@
+// Failed Azure sign-ins by source IP and user
+SigninLogs
+| where ResultType != 0
+| summarize failures=count(), firstSeen=min(TimeGenerated), lastSeen=max(TimeGenerated) by UserPrincipalName, IPAddress, AppDisplayName
+| where failures >= 5
+| order by failures desc
+
+// Privileged role assignment
+AuditLogs
+| where OperationName has_any ("Add member to role", "Add eligible member to role")
+| project TimeGenerated, OperationName, InitiatedBy, TargetResources, Result
+| order by TimeGenerated desc
+
+// Public network exposure changes
+AzureActivity
+| where OperationNameValue has_any ("MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/SECURITYRULES/WRITE", "MICROSOFT.STORAGE/STORAGEACCOUNTS/WRITE")
+| project TimeGenerated, Caller, CallerIpAddress, OperationNameValue, ResourceGroup, Resource, ActivityStatusValue, Properties
+| order by TimeGenerated desc
+
+// Defender for Cloud security alerts
+SecurityAlert
+| project TimeGenerated, AlertName, Severity, CompromisedEntity, Tactics, Techniques, Entities
+| order by TimeGenerated desc

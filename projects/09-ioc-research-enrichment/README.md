@@ -4,6 +4,17 @@
 
 Research indicators from a public malware or APT report, enrich them safely, score confidence, and produce a concise threat intelligence note for SOC use.
 
+## Status
+
+Built as a GitHub-ready lab package. Live enrichment screenshots and selected public report evidence are evidence pending.
+
+## Built Artifacts
+
+- `iocs/sample-ioc-table.csv`: synthetic IOC scoring table.
+- `templates/cti-note.md`: threat intelligence note template.
+- `reports/sample-cti-note.md`: sample SOC-ready CTI note.
+- `evidence/README.md`: enrichment and API safety guidance.
+
 ## Tools
 
 - Public vendor or government threat reports.

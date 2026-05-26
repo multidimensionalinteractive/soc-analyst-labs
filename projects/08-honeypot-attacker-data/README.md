@@ -4,6 +4,18 @@
 
 Deploy a controlled honeypot, capture attacker interaction data, analyze common patterns, and document defensive lessons without endangering trusted systems.
 
+## Status
+
+Built as a GitHub-ready lab package. Live honeypot deployment and sanitized attacker telemetry are evidence pending.
+
+## Built Artifacts
+
+- `deployment/cowrie-docker-compose.yml`: Cowrie container starter configuration.
+- `deployment/safe-deployment-checklist.md`: safety and teardown checklist.
+- `analysis/honeypot-log-queries.md`: jq queries for Cowrie JSON logs.
+- `reports/sample-honeypot-report.md`: sample analysis report.
+- `evidence/README.md`: honeypot evidence safety guidance.
+
 ## Tools
 
 - Cowrie SSH/Telnet honeypot or another reviewed honeypot.

@@ -1,0 +1,5 @@
+indicator,type,defanged,source,confidence,recommended_action
+login-example.bad,domain,hxxps://login-example[.]bad,synthetic email,high,block and search mail logs
+198.51.100.25,ip,198[.]51[.]100[.]25,synthetic redirect,medium,review proxy and DNS logs
+invoice_review.html,attachment_name,invoice_review.html,synthetic email,medium,quarantine matching messages
+9f86d081884c7d659a2feaa0c55ad015,hash_md5,9f86d081884c7d659a2feaa0c55ad015,synthetic attachment,low,search endpoint telemetry

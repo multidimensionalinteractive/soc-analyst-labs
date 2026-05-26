@@ -1,0 +1,19 @@
+# Hunt 1: PowerShell download behavior
+index=lab sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1 Image="*\\powershell.exe"
+| eval command_line=lower(CommandLine)
+| search command_line IN ("*downloadstring*", "*invoke-webrequest*", "*iwr *", "*curl *", "*wget *", "*frombase64string*")
+| table _time host User ParentImage Image CommandLine
+
+# Hunt 2: Discovery commands
+index=lab sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=1
+| eval command_line=lower(CommandLine)
+| search command_line IN ("*whoami /groups*", "*net view*", "*nltest*", "*dsquery*", "*ipconfig /all*", "*net group \"domain admins\"*")
+| table _time host User ParentImage Image CommandLine
+
+# Hunt 3: Beacon-like connection counts
+index=lab sourcetype="zeek:conn"
+| bin _time span=5m
+| stats count as connections sum(orig_bytes) as outbound_bytes sum(resp_bytes) as inbound_bytes by _time, id.orig_h, id.resp_h, id.resp_p
+| eventstats avg(connections) as avg_connections stdev(connections) as stdev_connections by id.orig_h, id.resp_h, id.resp_p
+| where connections >= avg_connections + (2 * stdev_connections)
+| sort - connections

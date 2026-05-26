@@ -14,22 +14,25 @@ https://www.linkedin.com/posts/artem-polynko_soc-analyst-hands-on-projects-ugcPo
 
 | # | Project | Primary Skills | Status |
 |---|---------|----------------|--------|
-| 01 | [SIEM log monitoring with Splunk or ELK](projects/01-siem-log-monitoring/) | Ingestion, parsing, dashboards, alert triage | Planned |
-| 02 | [Simulated phishing attack and incident response](projects/02-phishing-incident-response/) | Phishing triage, containment, reporting | Planned |
-| 03 | [IDS deployment and packet analysis with Snort or Suricata](projects/03-ids-packet-analysis/) | IDS rules, PCAP review, network detections | Planned |
-| 04 | [Cloud log monitoring with AWS CloudTrail or Microsoft Defender for Cloud](projects/04-cloud-log-monitoring/) | Cloud audit logs, identity events, alerting | Planned |
-| 05 | [Endpoint monitoring with Sysmon and Wazuh](projects/05-endpoint-sysmon-wazuh/) | Endpoint telemetry, Windows events, EDR-style triage | Planned |
-| 06 | [Threat hunting in real datasets](projects/06-threat-hunting-datasets/) | Hypothesis-driven hunting, Windows and Zeek logs | Planned |
-| 07 | [SOC automation with Python or PowerShell](projects/07-soc-automation-script/) | Alert enrichment, repeatable workflows, analyst tooling | Planned |
-| 08 | [Honeypot deployment and attacker data capture](projects/08-honeypot-attacker-data/) | Deception, telemetry capture, exposure analysis | Planned |
-| 09 | [IOC research and enrichment from malware or APT campaigns](projects/09-ioc-research-enrichment/) | OSINT, enrichment, confidence scoring, CTI notes | Planned |
-| 10 | [Phishing email and attachment analysis in a sandbox](projects/10-phishing-email-sandbox/) | Header analysis, attachment triage, sandbox evidence | Planned |
+| 01 | [SIEM log monitoring with Splunk or ELK](projects/01-siem-log-monitoring/) | Ingestion, parsing, dashboards, alert triage | Built |
+| 02 | [Simulated phishing attack and incident response](projects/02-phishing-incident-response/) | Phishing triage, containment, reporting | Built |
+| 03 | [IDS deployment and packet analysis with Snort or Suricata](projects/03-ids-packet-analysis/) | IDS rules, PCAP review, network detections | Built |
+| 04 | [Cloud log monitoring with AWS CloudTrail or Microsoft Defender for Cloud](projects/04-cloud-log-monitoring/) | Cloud audit logs, identity events, alerting | Built |
+| 05 | [Endpoint monitoring with Sysmon and Wazuh](projects/05-endpoint-sysmon-wazuh/) | Endpoint telemetry, Windows events, EDR-style triage | Built |
+| 06 | [Threat hunting in real datasets](projects/06-threat-hunting-datasets/) | Hypothesis-driven hunting, Windows and Zeek logs | Built |
+| 07 | [SOC automation with Python or PowerShell](projects/07-soc-automation-script/) | Alert enrichment, repeatable workflows, analyst tooling | Built |
+| 08 | [Honeypot deployment and attacker data capture](projects/08-honeypot-attacker-data/) | Deception, telemetry capture, exposure analysis | Built |
+| 09 | [IOC research and enrichment from malware or APT campaigns](projects/09-ioc-research-enrichment/) | OSINT, enrichment, confidence scoring, CTI notes | Built |
+| 10 | [Phishing email and attachment analysis in a sandbox](projects/10-phishing-email-sandbox/) | Header analysis, attachment triage, sandbox evidence | Built |
+
+Status note: `Built` means the GitHub lab package is ready with runbooks, detections, sample data, templates, and sample reports. `Evidence complete` should be used only after the live lab has been run and sanitized screenshots or outputs have been added.
 
 ## Repository Structure
 
 ```text
 soc-analyst-labs/
   docs/
+    build-status.md
     portfolio-roadmap.md
     safety.md
     source-notes.md
@@ -52,12 +55,12 @@ soc-analyst-labs/
 
 ## How To Use This Repo
 
-1. Pick one project and complete the lab in a controlled environment.
+1. Pick one project and run the lab in a controlled environment.
 2. Save screenshots in that project's `evidence/` folder.
 3. Add sanitized queries, rules, diagrams, and incident notes.
 4. Complete the project README's evidence checklist.
 5. Write a short public-facing summary using `templates/lab-writeup.md`.
-6. Update the status table above from `Planned` to `Complete`.
+6. Update the status table above from `Built` to `Evidence complete` after the hands-on evidence is added.
 
 ## Evidence Standard
 

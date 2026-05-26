@@ -4,6 +4,17 @@
 
 Deploy an IDS sensor, review alerts, inspect packet captures, and write simple detection logic for suspicious network behavior.
 
+## Status
+
+Built as a GitHub-ready lab package. Live IDS output and PCAP screenshots are evidence pending.
+
+## Built Artifacts
+
+- `rules/suricata-local.rules`: safe lab rules for scripted user agents, high-entropy DNS labels, and suspicious outbound ports.
+- `analysis/pcap-triage-checklist.md`: packet review workflow and filters.
+- `reports/sample-ids-report.md`: sample packet analysis report.
+- `evidence/README.md`: PCAP and screenshot safety guidance.
+
 ## Tools
 
 - Snort or Suricata.

@@ -1,0 +1,5 @@
+indicator,type,defanged,source,confidence,notes
+secure-login-example.bad,domain,secure-login-example[.]bad,email href,medium,synthetic phishing landing domain
+hxxps://secure-login-example[.]bad/session,url,hxxps://secure-login-example[.]bad/session,email href,medium,defanged synthetic URL
+invoice_update.html,filename,invoice_update.html,email attachment,low,filename alone is weak
+e3b0c44298fc1c149afbf4c8996fb924,hash_md5,e3b0c44298fc1c149afbf4c8996fb924,attachment hash,low,placeholder empty-file hash for lab formatting only

@@ -1,0 +1,4 @@
+alert_id,timestamp,source,indicator_type,normalized_indicator,host,user,severity,enrichment_summary,priority_score,recommended_next_step
+A-100,2026-05-25T18:00:00Z,siem,domain,evil.example.com,WIN-7,analyst,high,Known bad indicator; crown jewel host; privileged user,100,Escalate immediately
+A-101,2026-05-25T18:05:00Z,edr,ip,203.0.113.10,WIN-2,standard.user,medium,Known bad indicator,65,Review in analyst queue
+A-102,2026-05-25T18:07:00Z,email,hash_sha256,abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234abcd1234,WIN-3,finance.user,low,No local enrichment hits,20,Monitor or enrich further

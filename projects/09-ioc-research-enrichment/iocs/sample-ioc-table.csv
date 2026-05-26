@@ -1,0 +1,5 @@
+indicator,type,source_report,enrichment,confidence,recommended_use,notes
+malicious-example.bad,domain,synthetic campaign brief,registered recently and linked to credential lure,medium,dns/proxy hunt,defanged before sharing
+198.51.100.77,ip,synthetic campaign brief,seen hosting phishing landing page,low,context only,shared infrastructure possible
+44d88612fea8a8f36de82e1278abb02f,hash_md5,synthetic malware note,test malware hash commonly used in labs,high,file hash detection,do not treat as fresh campaign evidence
+invoice_update.js,filename,synthetic campaign brief,matches lure attachment naming,low,email search,filename alone is weak

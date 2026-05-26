@@ -4,6 +4,10 @@
 
 Build a small analyst automation that reduces repetitive triage work without hiding the evidence or making irreversible decisions.
 
+## Status
+
+Built as a runnable Python lab package with unit tests. Live analyst workflow screenshots are evidence pending.
+
 ## Tools
 
 - Python or PowerShell.
@@ -23,6 +27,28 @@ An analyst receives a CSV of alerts containing IPs, domains, hashes, users, and 
 5. Add optional external enrichment only through environment variables and documented rate limits.
 6. Output a CSV or Markdown triage summary.
 7. Add tests for parsing, validation, scoring, and output formatting.
+
+## Built Artifacts
+
+- `automation/triage_enricher.py`: runnable Python triage enrichment script.
+- `automation/sample_alerts.csv`: synthetic alert input.
+- `automation/local_context.json`: safe local enrichment context.
+- `tests/test_triage_enricher.py`: unit tests for normalization, scoring, output, and validation.
+- `reports/sample-automation-output.md`: example run command and expected result.
+
+## Run The Automation
+
+```powershell
+$env:PYTHONPATH="projects/07-soc-automation-script/automation"
+python projects/07-soc-automation-script/automation/triage_enricher.py --alerts projects/07-soc-automation-script/automation/sample_alerts.csv --context projects/07-soc-automation-script/automation/local_context.json --output projects/07-soc-automation-script/automation/triage_summary.csv
+```
+
+## Run Tests
+
+```powershell
+$env:PYTHONPATH="projects/07-soc-automation-script/automation"
+python -m unittest discover -s projects/07-soc-automation-script/tests -v
+```
 
 ## Automation Ideas
 

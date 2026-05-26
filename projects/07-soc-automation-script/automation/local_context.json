@@ -1,0 +1,9 @@
+{
+  "known_bad": {
+    "domain": ["evil.example.com"],
+    "ip": ["203.0.113.10"],
+    "hash_sha256": []
+  },
+  "crown_jewel_hosts": ["WIN-7", "DC-1", "PAYROLL-1"],
+  "privileged_users": ["analyst", "domain.admin"]
+}

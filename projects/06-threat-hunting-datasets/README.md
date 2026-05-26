@@ -4,6 +4,17 @@
 
 Use public Windows, Zeek, Sysmon, or cloud datasets to run hypothesis-driven threat hunts and document evidence-backed findings.
 
+## Status
+
+Built as a GitHub-ready lab package. Live public dataset query screenshots are evidence pending.
+
+## Built Artifacts
+
+- `hunts/hunt-plan.md`: three hypothesis-driven hunt plans.
+- `queries/threat-hunts.spl`: starter SPL hunts for PowerShell download behavior, discovery, and beacon-like connections.
+- `reports/sample-hunt-report.md`: sample hunt report.
+- `evidence/README.md`: dataset and screenshot guidance.
+
 ## Tools
 
 - Splunk, Elastic, Jupyter notebooks, or local query tools.

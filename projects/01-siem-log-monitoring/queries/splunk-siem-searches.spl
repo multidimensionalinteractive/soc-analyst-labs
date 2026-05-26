@@ -1,0 +1,25 @@
+# Suspicious PowerShell execution
+index=lab sourcetype IN ("XmlWinEventLog:Microsoft-Windows-Sysmon/Operational", "WinEventLog:Security")
+Image="*\\powershell.exe"
+| eval command_line=lower(CommandLine)
+| search command_line IN ("*encodedcommand*", "*downloadstring*", "*iex*", "*bypass*", "*frombase64string*")
+| table _time host User Image CommandLine ParentImage
+
+# Failed logons followed by success from the same source
+index=lab sourcetype="WinEventLog:Security" EventCode IN (4624, 4625)
+| eval auth_result=if(EventCode=4624, "success", "failure")
+| stats count(eval(auth_result="failure")) as failures count(eval(auth_result="success")) as successes min(_time) as first_seen max(_time) as last_seen by Account_Name, Source_Network_Address, host
+| where failures >= 5 AND successes >= 1
+| convert ctime(first_seen) ctime(last_seen)
+
+# Rare outbound destination by host
+index=lab (sourcetype="suricata:eve" OR sourcetype="zeek:conn")
+| stats count dc(dest_ip) as unique_destinations values(dest_port) as ports by src_ip, dest_ip
+| eventstats avg(count) as avg_connections stdev(count) as stdev_connections by src_ip
+| where count > avg_connections + (2 * stdev_connections)
+| sort - count
+
+# New local administrator group membership
+index=lab sourcetype="WinEventLog:Security" EventCode=4732
+| search Target_Account_Name="Administrators"
+| table _time host Subject_Account_Name Member_Name Target_Account_Name

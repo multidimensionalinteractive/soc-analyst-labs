@@ -4,6 +4,17 @@
 
 Build a small SIEM lab that ingests security logs, normalizes useful fields, creates searches, and documents alert triage decisions.
 
+## Status
+
+Built as a GitHub-ready lab package. Live SIEM screenshots and sanitized query results are evidence pending.
+
+## Built Artifacts
+
+- `queries/splunk-siem-searches.spl`: starter SPL searches for PowerShell, authentication, outbound traffic, and admin group changes.
+- `queries/elastic-detection-queries.eql`: Elastic Security query starters.
+- `reports/sample-triage-report.md`: sample analyst triage report.
+- `evidence/README.md`: screenshot and sanitization guidance.
+
 ## Tools
 
 - Splunk Enterprise or Elastic Security.

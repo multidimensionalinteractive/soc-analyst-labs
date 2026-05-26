@@ -4,6 +4,17 @@
 
 Practice phishing investigation from initial report through triage, containment, user impact analysis, IOC extraction, and final reporting.
 
+## Status
+
+Built as a GitHub-ready lab package. Live mailbox screenshots and sanitized mail-log evidence are evidence pending.
+
+## Built Artifacts
+
+- `runbooks/phishing-ir-runbook.md`: analyst workflow from intake to reporting.
+- `iocs/phishing-ioc-table.csv`: synthetic IOC table with defanged values.
+- `reports/sample-incident-report.md`: sample phishing incident report.
+- `evidence/README.md`: screenshot and privacy guidance.
+
 ## Tools
 
 - Owned test mailbox or synthetic email samples.

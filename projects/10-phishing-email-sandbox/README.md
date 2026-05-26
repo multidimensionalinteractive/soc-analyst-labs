@@ -4,6 +4,18 @@
 
 Analyze phishing emails and suspicious attachments in a controlled environment, extract indicators, and document safe handling decisions.
 
+## Status
+
+Built as a GitHub-ready lab package. Live sandbox screenshots and static analysis outputs are evidence pending.
+
+## Built Artifacts
+
+- `analysis/static-analysis-checklist.md`: email, link, attachment, and sandbox checklist.
+- `sandbox/remnux-safe-workflow.md`: safe REMnux-oriented workflow.
+- `iocs/sample-email-iocs.csv`: synthetic defanged IOC table.
+- `reports/sample-sandbox-report.md`: sample phishing sandbox report.
+- `evidence/README.md`: malware and private-message safety guidance.
+
 ## Tools
 
 - Isolated analysis VM.

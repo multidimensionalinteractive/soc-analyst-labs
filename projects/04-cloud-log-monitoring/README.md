@@ -4,6 +4,17 @@
 
 Monitor cloud audit and security events, detect risky identity or resource activity, and document an alert triage workflow.
 
+## Status
+
+Built as a GitHub-ready lab package. Live AWS or Azure screenshots are evidence pending.
+
+## Built Artifacts
+
+- `queries/aws-cloudtrail-lake.sql`: CloudTrail Lake queries for root use, failed login, admin policy changes, and broad security group exposure.
+- `queries/azure-defender-kql.kql`: Azure and Defender KQL starters for sign-in, role, exposure, and alert review.
+- `reports/sample-cloud-alert-report.md`: sample cloud alert report.
+- `evidence/README.md`: cloud identifier sanitization guidance.
+
 ## Tools
 
 - AWS CloudTrail, CloudWatch, and IAM Access Analyzer, or Microsoft Defender for Cloud and Azure Activity Logs.

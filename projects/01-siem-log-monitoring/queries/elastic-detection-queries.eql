@@ -1,0 +1,14 @@
+/* Suspicious PowerShell execution */
+process where process.name == "powershell.exe" and
+  wildcard(process.command_line, "*encodedcommand*", "*downloadstring*", "*iex*", "*bypass*", "*frombase64string*")
+
+/* Repeated failed logons should be paired with a timeline or threshold rule in Elastic Security */
+authentication where event.action in ("logon-failed", "logged-in") and
+  source.ip != null and user.name != null
+
+/* New local administrator membership */
+iam where event.code == "4732" and group.name == "Administrators"
+
+/* Rare outbound process network activity */
+network where event.action == "connection_attempted" and
+  process.name not in ("chrome.exe", "msedge.exe", "firefox.exe", "teams.exe", "outlook.exe")

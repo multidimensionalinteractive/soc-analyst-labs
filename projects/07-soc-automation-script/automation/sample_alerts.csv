@@ -1,0 +1,4 @@
+alert_id,timestamp,source,indicator_type,indicator_value,host,user,severity
+A-100,2026-05-25T18:00:00Z,siem,domain,Evil.Example.COM,WIN-7,analyst,high
+A-101,2026-05-25T18:05:00Z,edr,ip,203.0.113.10,WIN-2,standard.user,medium
+A-102,2026-05-25T18:07:00Z,email,hash_sha256,ABCD1234ABCD1234ABCD1234ABCD1234ABCD1234ABCD1234ABCD1234ABCD1234,WIN-3,finance.user,low

@@ -4,6 +4,17 @@
 
 Collect endpoint telemetry from a Windows lab host, forward it to Wazuh, and build detections for suspicious process and network activity.
 
+## Status
+
+Built as a GitHub-ready lab package. Live Sysmon and Wazuh screenshots are evidence pending.
+
+## Built Artifacts
+
+- `configs/sysmon-lab-config.xml`: minimal lab Sysmon configuration focused on suspicious process, network, file, and registry events.
+- `queries/wazuh-discover-queries.md`: Wazuh searches for Sysmon process, network, startup, and registry events.
+- `reports/sample-endpoint-report.md`: sample endpoint investigation report.
+- `evidence/README.md`: endpoint evidence guidance.
+
 ## Tools
 
 - Windows lab VM.
