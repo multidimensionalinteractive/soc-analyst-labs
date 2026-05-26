@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+.env
+.env.*
+*.log
+*.pcap
+*.pcapng
+*.evtx
+*.zip
+*.7z
+*.tar.gz
+captures/
+evidence/raw/
+malware/
+secrets/
